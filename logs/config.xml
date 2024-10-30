@@ -1,0 +1,25 @@
+<configuration xmlns="http://logging.apache.org/log4php/">
+    <appender name="default" class="LoggerAppenderDailyFile">        
+        <layout class="LoggerLayoutPattern">
+            <param name="conversionPattern" value="%date{Y-m-d H:i:s,u} %logger %-5level %F{10}:%L %msg%n" />
+        </layout>
+        <param name="file" value="/var/www/termel/wp-content/plugins/calder-svg/logs/caldersvg-%s.log" />
+        <param name="datePattern" value="Y-m-d" />
+    </appender>
+    <!--
+    <appender name="email" class="LoggerAppenderMailEvent">
+        <layout class="LoggerLayoutSimple" />
+        <param name="to" value="ocheckup@gmail.com" />
+        <param name="from" value="ocheckup@gmail.com" />
+    </appender>
+    -->
+    <root>
+       	<level value="OFF" />
+        <appender_ref ref="default" />
+    </root>
+    <!-- 
+    <logger name="email">
+        <appender_ref ref="email" />
+    </logger>
+     -->
+</configuration>
